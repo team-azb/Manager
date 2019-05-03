@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+
+    <script type="text/javascript" src="vending_machine.js"></script>
+
+</head>
+<body>
+    <h1>
+        じどうはんばいき
+    </h1>
+
+    <form name="putin" id="f1" action="">
+        <input type="button" value="水(100円)"   onclick="spendMoney(100, '水');" /> <br>
+        <input type="button" value="お茶(130円)"   onclick="spendMoney(130, 'お茶');" /> <br>
+        <input type="button" value="コーラ(160円)"  onclick="spendMoney(160, 'コーラ');" /> <br>
+        <input type="button" value="レッドブル(200円)"  onclick="spendMoney(200, 'RedBull');" /> <br>
+        <input type="button" value="うんち(1000円)" onclick="spendMoney(1000, '💩');" />
+    </form>
+
+    <label for="name">
+        <br>
+        お金を入れてね
+    </label>
+    <form name="putin" id="f1" action="">
+        <input type="button" value="1円玉"   onclick="putMoney(1);" />
+        <input type="button" value="5円玉"   onclick="putMoney(5);" />
+        <input type="button" value="10円玉"  onclick="putMoney(10);" />
+        <input type="button" value="50円玉"  onclick="putMoney(50);" />
+        <input type="button" value="100円玉" onclick="putMoney(100);" />
+        <input type="button" value="500円玉" onclick="putMoney(500);" />
+        <input type="button" value="3億円事件" onclick="putMoney(300000000);" />
+        <br>
+        <input type="button" value="おつり" onclick="reSet();" />
+    </form>
+
+    <div id="state">
+        <br>
+        投入金額：0円
+    </div> <!--投入金額-->
+    <div id="message">
+        <br>
+        いらっしゃいませ〜
+    </div> <!--買ったもの、お釣りなどのメッセージ-->
+
+    <div id="counter"></div> <!--購入履歴-->
+</body>
+</html>

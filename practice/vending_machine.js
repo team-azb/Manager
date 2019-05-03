@@ -22,9 +22,9 @@ const spendMoney = (m, str) => {
     showState();
 }
 
-const showState = (res=false) => {
+const showState = (res=false, change=0) => {
     const ele1 = document.getElementById("state"), ele2 = document.getElementById("counter");
-    ele1.innerHTML = (res ? "<br> おつり：" : "<br> 投入金額：") + state + "円";
+    ele1.innerHTML = "<br> 投入金額：" + state + "円" + (res ? "<br><br> おつり："  + change + "円 " : "");
     let countStr = res ? "<br> 戦利品：" : "<br> 購入履歴："
     if (buy) 
         for (const key of Object.keys(counter))
@@ -34,8 +34,9 @@ const showState = (res=false) => {
 }
 
 const reSet = () => {
-    showState(true);
+    let change = state;
     state = 0;
+    showState(true, change);
     for (const key of Object.keys(counter))
         counter[key] = 0;
     const ele = document.getElementById("message");

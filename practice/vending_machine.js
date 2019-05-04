@@ -37,6 +37,7 @@ const reSet = () => {
     let change = state;
     state = 0;
     showState(true, change);
+    buy = false;
     for (const key of Object.keys(counter))
         counter[key] = 0;
     const ele = document.getElementById("message");
